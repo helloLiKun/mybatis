@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.cn.mapper.SysUserMapper">
+    <select id="findAll"  resultType="com.mybatis.cn.entity.SysUser">
+        select * from SYS_USER
+    </select>
+
+    <select id="findAll1"  resultMap="userMap">
+        select * from SYS_USER
+    </select>
+
+    <resultMap type="com.mybatis.cn.entity.User" id="userMap">
+        <result property="id" column="id"></result>
+        <result property="name" column="name"></result>
+        <result property="identity" column="ID_NUM"></result>
+        <result property="password" column="PWD"></result>
+        <result property="phone" column="PHONE_NUM"></result>
+    </resultMap>
+    <!--<select id="findById"-->
+            <!--parameterType="integer"-->
+            <!--resultType="com.tarena.entity.Emp">-->
+        <!--select * from t_emp where empno=#{id}-->
+    <!--</select>-->
+
+    <!--<insert id="save"-->
+            <!--parameterType="com.tarena.entity.Emp">-->
+        <!--insert into t_emp values(-->
+        <!--emp_seq.nextval,-->
+        <!--#{ename},-->
+        <!--#{job},-->
+        <!--#{mgr},-->
+        <!--#{hiredate},-->
+        <!--#{sal},-->
+        <!--#{comm},-->
+        <!--#{deptno}-->
+        <!--)-->
+    <!--</insert>-->
+
+    <!--<update id="update"-->
+            <!--parameterType="com.tarena.entity.Emp">-->
+        <!--update t_emp set-->
+        <!--ename=#{ename},-->
+        <!--job=#{job},-->
+        <!--mgr=#{mgr},-->
+        <!--hiredate=#{hiredate},-->
+        <!--sal=#{sal},-->
+        <!--comm=#{comm},-->
+        <!--deptno=#{deptno}-->
+        <!--where empno=#{empno}-->
+    <!--</update>-->
+
+    <!--<delete id="delete"-->
+            <!--parameterType="integer">-->
+        <!--delete from t_emp where empno=#{id}-->
+    <!--</delete>-->
+
+</mapper>
