@@ -5,7 +5,6 @@ import com.mybatis.cn.entity.User;
 import com.mybatis.cn.mapper.MybaitsDao;
 import com.mybatis.cn.mapper.SysUserMapper;
 import com.mybatis.cn.mapper.SysUserMapperDao;
-import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
 import java.util.List;
@@ -53,9 +52,6 @@ public class SysUserTest {
     public void delete(){
         sysUserMapper.delete("4");
     }
-
-
-
 
 
 }
