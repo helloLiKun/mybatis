@@ -20,4 +20,52 @@ public class SysUserMapperDao implements SysUserMapper {
     public List<User> findAll1() {
         return sqlSession.selectList("com.mybatis.cn.mapper.SysUserMapper.findAll1");
     }
+
+    @Override
+    public SysUser findById(String id) {
+        return sqlSession.selectOne("com.mybatis.cn.mapper.SysUserMapper.findById",id);
+    }
+
+    @Override
+    public void save(SysUser sysUser) {
+        try{
+            sqlSession.insert("com.mybatis.cn.mapper.SysUserMapper.save",sysUser);
+            sqlSession.commit();
+        }catch (Exception e){
+            sqlSession.rollback();
+            e.printStackTrace();
+        }finally {
+            sqlSession.close();
+        }
+    }
+
+    @Override
+    public void update(SysUser sysUser) {
+        try{
+            sqlSession.update("com.mybatis.cn.mapper.SysUserMapper.update",sysUser);
+            sqlSession.commit();
+        }catch (Exception e){
+            sqlSession.rollback();
+            e.printStackTrace();
+        }finally {
+            sqlSession.close();
+        }
+    }
+
+    @Override
+    public void delete(String id) {
+        try{
+            sqlSession.delete("com.mybatis.cn.mapper.SysUserMapper.delete",id);
+            sqlSession.commit();
+        }catch (Exception e){
+            sqlSession.rollback();
+            e.printStackTrace();
+        }finally {
+            sqlSession.close();
+        }
+
+    }
+
+
+
 }

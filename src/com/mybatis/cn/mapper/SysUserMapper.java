@@ -11,4 +11,8 @@ import java.util.List;
 public interface SysUserMapper {
     List<SysUser> findAll();
     List<User> findAll1();
+    SysUser findById(String id);
+    void save(SysUser sysUser);
+    void update(SysUser sysUser);
+    void delete(String id);
 }
